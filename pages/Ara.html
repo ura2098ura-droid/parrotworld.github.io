@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ара - Мир попугаев</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #ffffff;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header__main {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .header__main .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header__logo h1 {
+            margin: 0;
+            color: #27ae60;
+            font-size: 24px;
+        }
+
+        .header__nav {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .header__nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .header__nav a:hover {
+            color: #27ae60;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+            min-height: calc(100vh - 200px);
+        }
+
+        .parrot-hero {
+            background: linear-gradient(135deg, #e74c3c, #e67e22);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .parrot-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .parrot-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 40px 0;
+        }
+
+        .parrot-image {
+            width: 100%;
+            height: 400px;
+            object-fit: contain;
+            border-radius: 15px;
+            background: #f8f9fa;
+        }
+
+        .parrot-info {
+            padding: 20px;
+        }
+
+        .info-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e9ecef;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        .species-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .species-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border: 2px solid #e9ecef;
+            text-align: center;
+        }
+
+        .color-palette {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+            justify-content: center;
+        }
+
+        .color-dot {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .red { background: #e74c3c; }
+        .blue { background: #3498db; }
+        .yellow { background: #f1c40f; }
+        .green { background: #27ae60; }
+
+        @media (max-width: 768px) {
+            .parrot-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .header__nav {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+    <nav class="header__main">
+        <div class="container">
+            <div class="header__logo">
+                <h1>🦜 Мир попугаев</h1>
+            </div>
+            <ul class="header__nav">
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="../index.html" onclick="showSection('species')">Виды попугаев</a></li>
+                <li><a href="../index.html" onclick="showSection('care')">Содержание и уход</a></li>
+                <li><a href="../index.html" onclick="showSection('intelligence')">Интеллект</a></li>
+                <li><a href="../index.html" onclick="showSection('contacts')">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <main>
+        <section class="parrot-hero">
+            <div class="container">
+                <h1>Ара</h1>
+                <p>Величественный гигант среди попугаев</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="parrot-content">
+                <div>
+                    <img src="../images/parrots/Bee.png" alt="Ара" class="parrot-image" onerror="this.src='https://via.placeholder.com/600x400/e74c3c/ffffff?text=Ара'">
+                </div>
+                <div class="parrot-info">
+                    <h2>Ara</h2>
+                    <p>Крупнейший представитель семейства с ярким окрасом. Имеет очень чувствительные лапы, способные улавливать вибрации. Величественная и умная птица.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value">80-95 см</div>
+                            <div>Размер</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">50-80 лет</div>
+                            <div>Продолжительность жизни</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">Средняя</div>
+                            <div>Способность к речи</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">Очень высокая</div>
+                            <div>Сложность содержания</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3>Яркая палитра окрасов</h3>
+                <div class="color-palette">
+                    <div class="color-dot red" title="Красный"></div>
+                    <div class="color-dot blue" title="Синий"></div>
+                    <div class="color-dot yellow" title="Желтый"></div>
+                    <div class="color-dot green" title="Зеленый"></div>
+                </div>
+                <p>Ара славятся своей невероятно яркой окраской. Каждый вид имеет уникальное сочетание цветов, от огненно-красного до изумрудно-зеленого.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Популярные виды ара</h3>
+                <div class="species-list">
+                    <div class="species-item">
+                        <strong>Красный ара</strong>
+                        <div>Классический вид</div>
+                    </div>
+                    <div class="species-item">
+                        <strong>Сине-желтый ара</strong>
+                        <div>Самый узнаваемый</div>
+                    </div>
+                    <div class="species-item">
+                        <strong>Зеленокрылый ара</strong>
+                        <div>Крупный и спокойный</div>
+                    </div>
+                    <div class="species-item">
+                        <strong>Гиацинтовый ара</strong>
+                        <div>Самый большой</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3>Особенности содержания</h3>
+                <p>Требуют огромных вольеров (от 3×2×2 м), специального питания и постоянного внимания. Очень громкие, нуждаются в профессиональном уходе. Не для начинающих!</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Интеллект и характер</h3>
+                <p>Обладают высоким интеллектом, эмоциональны, формируют прочные связи с хозяевами. Чувствительные лапы могут "слышать" вибрации. Любят решать сложные задачи.</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

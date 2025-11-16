@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Амазон - Мир попугаев</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #ffffff;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header__main {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .header__main .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header__logo h1 {
+            margin: 0;
+            color: #27ae60;
+            font-size: 24px;
+        }
+
+        .header__nav {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .header__nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .header__nav a:hover {
+            color: #27ae60;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+            min-height: calc(100vh - 200px);
+        }
+
+        .parrot-hero {
+            background: linear-gradient(135deg, #e67e22, #f39c12);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .parrot-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .parrot-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 40px 0;
+        }
+
+        .parrot-image {
+            width: 100%;
+            height: 400px;
+            object-fit: contain;
+            border-radius: 15px;
+            background: #f8f9fa;
+        }
+
+        .parrot-info {
+            padding: 20px;
+        }
+
+        .info-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 4px solid #e67e22;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e9ecef;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e67e22;
+        }
+
+        .species-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .species-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border: 2px solid #e9ecef;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .parrot-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .header__nav {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+    <body>
+    <header class="header">
+        <nav class="header__main">
+            <div class="container">
+                <div class="header__logo">
+                    <h1>🦜 Мир попугаев</h1>
+                </div>
+                <ul class="header__nav">
+                    <li><a href="../index.html">Главная</a></li>
+                    <li><a href="../index.html" onclick="showSection('species')">Виды попугаев</a></li>
+                    <li><a href="../index.html" onclick="showSection('care')">Содержание и уход</a></li>
+                    <li><a href="../index.html" onclick="showSection('intelligence')">Интеллект</a></li>
+                    <li><a href="../index.html" onclick="showSection('contacts')">Контакты</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="parrot-hero">
+            <div class="container">
+                <h1>Амазон</h1>
+                <p>Король говорящих попугаев</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="parrot-content">
+                <div>
+                    <img src="../images/parrots/Amazon.png" alt="Амазон" class="parrot-image" onerror="this.src='https://via.placeholder.com/600x400/e67e22/ffffff?text=Амазон'">
+                </div>
+                <div class="parrot-info">
+                    <h2>Amazona</h2>
+                    <p>Крупный, сообразительный попугай, известный исключительными речевыми способностями и чистым голосом. Существует около 30 разновидностей.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value">25-40 см</div>
+                            <div>Размер</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">40-50 лет</div>
+                            <div>Продолжительность жизни</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">Очень высокая</div>
+                            <div>Способность к речи</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">Средняя</div>
+                            <div>Сложность содержания</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3>Популярные виды амазонов</h3>
+                <div class="species-list">
+                    <div class="species-item">
+                        <strong>Синелобый</strong>
+                        <div>Самый говорящий</div>
+                    </div>
+                    <div class="species-item">
+                        <strong>Желтоголовый</strong>
+                        <div>Яркое оперение</div>
+                    </div>
+                    <div class="species-item">
+                        <strong>Кубинский</strong>
+                        <div>Редкий вид</div>
+                    </div>
+                    <div class="species-item">
+                        <strong>Венесуэльский</strong>
+                        <div>Дружелюбный</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3>Особенности характера</h3>
+                <p>Очень общительные и эмоциональные птицы. Обладают громким голосом. Требуют много внимания и социального взаимодействия. Легко обучаются трюкам.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Речевые способности</h3>
+                <p>Считаются лучшими говорунами среди попугаев. Чистое произношение, большой словарный запас. Способны вести диалоги и петь песни.</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

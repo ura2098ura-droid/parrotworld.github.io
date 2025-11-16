@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Жако - Мир попугаев</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #ffffff;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header__main {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .header__main .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header__logo h1 {
+            margin: 0;
+            color: #27ae60;
+            font-size: 24px;
+        }
+
+        .header__nav {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .header__nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .header__nav a:hover {
+            color: #27ae60;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+            min-height: calc(100vh - 200px);
+        }
+
+        .parrot-hero {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .parrot-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .parrot-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 40px 0;
+        }
+
+        .parrot-image {
+            width: 100%;
+            height: 400px;
+            object-fit: contain;
+            border-radius: 15px;
+            background: #f8f9fa;
+        }
+
+        .parrot-info {
+            padding: 20px;
+        }
+
+        .info-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 4px solid #27ae60;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e9ecef;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #27ae60;
+        }
+
+        @media (max-width: 768px) {
+            .parrot-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .header__nav {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+    <nav class="header__main">
+        <div class="container">
+            <div class="header__logo">
+                <h1>🦜 Мир попугаев</h1>
+            </div>
+            <ul class="header__nav">
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="../index.html" onclick="showSection('species')">Виды попугаев</a></li>
+                <li><a href="../index.html" onclick="showSection('care')">Содержание и уход</a></li>
+                <li><a href="../index.html" onclick="showSection('intelligence')">Интеллект</a></li>
+                <li><a href="../index.html" onclick="showSection('contacts')">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <main>
+        <section class="parrot-hero">
+            <div class="container">
+                <h1>Жако</h1>
+                <p>Самый сообразительный попугай в мире</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="parrot-content">
+                <div>
+                    <img src="../images/parrots/Jaco.png" alt="Жако" class="parrot-image" onerror="this.src='https://via.placeholder.com/600x400/27ae60/ffffff?text=Жако'">
+                </div>
+                <div class="parrot-info">
+                    <h2>Африканский серый попугай</h2>
+                    <p>Жако считается самым интеллектуально развитым попугаем. Способен не только запоминать слова, но и осознанно их употреблять в диалоге.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value">30-35 см</div>
+                            <div>Размер</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">40-60 лет</div>
+                            <div>Продолжительность жизни</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">1000+ слов</div>
+                            <div>Словарный запас</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">Высокая</div>
+                            <div>Способность к речи</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3>Особенности интеллекта</h3>
+                <p>Жако демонстрируют когнитивные способности уровня 4-5 летнего ребенка. Они понимают концепции цвета, формы, количества и могут решать сложные логические задачи.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Содержание и уход</h3>
+                <p>Требуют просторной клетки (минимум 100×80×120 см), разнообразного питания и постоянного умственного стимула. Очень социальные птицы, нуждаются во внимании хозяина.</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
